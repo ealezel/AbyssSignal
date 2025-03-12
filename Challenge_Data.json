@@ -1,0 +1,37 @@
+[
+	{
+		"Name": "Default",
+		"Slot1": "PositiveGate",
+		"Slot2": "NegativeGate",
+		"Slot3": "BlockWall",
+		"Slot4": "NegativeGate"
+	},
+	{
+		"Name": "HotRoad",
+		"Slot1": "PositiveGate",
+		"Slot2": "NegativeGate",
+		"Slot3": "NegativeGate",
+		"Slot4": "PositiveGate"
+	},
+	{
+		"Name": "HolyGrail",
+		"Slot1": "NegativeGate",
+		"Slot2": "PositiveGate",
+		"Slot3": "PositiveGate",
+		"Slot4": "NegativeGate"
+	},
+	{
+		"Name": "DeadInside",
+		"Slot1": "BlockWall",
+		"Slot2": "NegativeGate",
+		"Slot3": "PowerShotGate",
+		"Slot4": "BlockWall"
+	},
+	{
+		"Name": "NewRow",
+		"Slot1": "BlockWall",
+		"Slot2": "NegativeGate",
+		"Slot3": "SplitGate",
+		"Slot4": "BlockWall"
+	}
+]
