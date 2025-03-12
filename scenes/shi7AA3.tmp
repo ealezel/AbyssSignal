@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://ydngqtuepp4g"]
+
+[ext_resource type="PackedScene" uid="uid://ccrapu1t2gcj1" path="res://models/Ship.gltf" id="1_lg3e8"]
+[ext_resource type="Material" uid="uid://dqgp7qmq2mxib" path="res://shaders/water_mask/water_mask.tres" id="2_ygqsq"]
+[ext_resource type="Script" path="res://scripts/water_hider.gd" id="3_3w1ch"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1p7fc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rd7em"]
+size = Vector3(11.2945, 7.45788, 24.9029)
+
+[node name="Ship" type="Node3D"]
+
+[node name="Model" parent="." instance=ExtResource("1_lg3e8")]
+
+[node name="Hold Entrance" type="MeshInstance3D" parent="Model"]
+transform = Transform3D(1.2601, 0, 0, 0, 1, 0, 0, 0, 3.14936, -2.16377, 7.83976, 20.5535)
+mesh = SubResource("PlaneMesh_1p7fc")
+surface_material_override/0 = ExtResource("2_ygqsq")
+
+[node name="Water Hider" type="Area3D" parent="Model"]
+script = ExtResource("3_3w1ch")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Model/Water Hider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0633435, 3.91443, 12.216)
+shape = SubResource("BoxShape3D_rd7em")
+
+[connection signal="body_entered" from="Model/Water Hider" to="Model/Water Hider" method="_on_body_entered"]
+[connection signal="body_exited" from="Model/Water Hider" to="Model/Water Hider" method="_on_body_exited"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmr1vjj86lduw"]
+
+[ext_resource type="Script" path="res://scripts/ScriptDirector.gd" id="1_33npy"]
+[ext_resource type="Script" path="res://scripts/Greatings.gd" id="2_42i5d"]
+[ext_resource type="Script" path="res://scripts/GameData.gd" id="3_5m10o"]
+[ext_resource type="Script" path="res://scripts/FirstSunset.gd" id="3_cpryq"]
+[ext_resource type="Script" path="res://scripts/FirstInteraction.gd" id="4_3gbdn"]
+
+[node name="ScriptDirector" type="Node"]
+script = ExtResource("1_33npy")
+
+[node name="Greatings" type="Node" parent="."]
+script = ExtResource("2_42i5d")
+
+[node name="FirstSunset" type="Node" parent="."]
+script = ExtResource("3_cpryq")
+
+[node name="FirstInteraction" type="Node" parent="."]
+script = ExtResource("4_3gbdn")
+
+[node name="GameData" type="Node" parent="."]
+script = ExtResource("3_5m10o")

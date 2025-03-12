@@ -1,0 +1,106 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbbammh28t1dh"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_0smrv"]
+[ext_resource type="Texture2D" uid="uid://d0me6w6ag2qki" path="res://sprites/kenney/PNG (Transparent)/circle_05.png" id="2_0tiug"]
+[ext_resource type="AudioStream" uid="uid://1n2sfxwsppn4" path="res://sounds/Metal Step Faded.mp3" id="2_5avlf"]
+[ext_resource type="AudioStream" uid="uid://bm4ifm6js12qw" path="res://sounds/Flashlight.mp3" id="2_b6ed2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ysakq"]
+radius = 0.6
+height = 4.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2t486"]
+
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+slide_on_ceiling = false
+floor_constant_speed = true
+floor_max_angle = 1.13446
+floor_snap_length = 0.2
+safe_margin = 0.005
+script = ExtResource("1_0smrv")
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="Hint" type="Label" parent="GUI"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = 28.0
+offset_right = 54.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="GUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.03, 0.03)
+pivot_offset = Vector2(256, 256)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_0tiug")
+
+[node name="Body" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ysakq")
+
+[node name="Player Footsteps" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.62908, 0)
+stream = ExtResource("2_5avlf")
+
+[node name="Timer" type="Timer" parent="Player Footsteps"]
+one_shot = true
+
+[node name="Swimming Point" type="Area3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.953308, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Swimming Point"]
+shape = SubResource("BoxShape3D_2t486")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.63392, 0)
+
+[node name="Eyes" type="Node3D" parent="Head"]
+
+[node name="Camera3D" type="Camera3D" parent="Head/Eyes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0859352, 0)
+current = true
+near = 0.001
+far = 1000.0
+
+[node name="Interact Checker" type="RayCast3D" parent="Head/Eyes"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+target_position = Vector3(0, 0, -4)
+
+[node name="Hand" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43, 0.59792, 0)
+
+[node name="Flashlight" type="SpotLight3D" parent="Hand"]
+transform = Transform3D(0.999851, 0.000985095, 0.0172375, 0.00172384, 0.987687, -0.156435, -0.0171794, 0.156441, 0.987538, 0, 0, 0)
+visible = false
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+spot_range = 20.0
+spot_attenuation = 0.0136024
+spot_angle = 25.0
+spot_angle_attenuation = 0.450625
+
+[node name="Flashlight Click" type="AudioStreamPlayer" parent="Hand/Flashlight"]
+stream = ExtResource("2_b6ed2")
+volume_db = -15.0

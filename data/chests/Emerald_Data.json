@@ -1,0 +1,152 @@
+{
+	"Row2": {
+		"ChestType": "Emerald",
+		"Life": 20,
+		"Rate": 0
+	},
+	"Row2": {
+		"ChestType": "Emerald",
+		"Life": 30,
+		"Rate": 0
+	},
+	"Row3": {
+		"ChestType": "Emerald",
+		"Life": 40,
+		"Rate": 0
+	},
+	"Row4": {
+		"ChestType": "Emerald",
+		"Life": 40,
+		"Rate": 0
+	},
+	"Row5": {
+		"ChestType": "Emerald",
+		"Life": 50,
+		"Rate": 0
+	},
+	"Row6": {
+		"ChestType": "Emerald",
+		"Life": 50,
+		"Rate": 0
+	},
+	"Row7": {
+		"ChestType": "Emerald",
+		"Life": 60,
+		"Rate": 1
+	},
+	"Row8": {
+		"ChestType": "Emerald",
+		"Life": 60,
+		"Rate": 1
+	},
+	"Row9": {
+		"ChestType": "Emerald",
+		"Life": 70,
+		"Rate": 1
+	},
+	"Row10": {
+		"ChestType": "Emerald",
+		"Life": 70,
+		"Rate": 1
+	},
+	"Row11": {
+		"ChestType": "Emerald",
+		"Life": 70,
+		"Rate": 1
+	},
+	"Row12": {
+		"ChestType": "Emerald",
+		"Life": 70,
+		"Rate": 1
+	},
+	"Row13": {
+		"ChestType": "Emerald",
+		"Life": 70,
+		"Rate": 1
+	},
+	"Row14": {
+		"ChestType": "Emerald",
+		"Life": 80,
+		"Rate": 1
+	},
+	"Row15": {
+		"ChestType": "Emerald",
+		"Life": 80,
+		"Rate": 1
+	},
+	"Row16": {
+		"ChestType": "Emerald",
+		"Life": 80,
+		"Rate": 2
+	},
+	"Row17": {
+		"ChestType": "Emerald",
+		"Life": 80,
+		"Rate": 2
+	},
+	"Row18": {
+		"ChestType": "Emerald",
+		"Life": 80,
+		"Rate": 2
+	},
+	"Row19": {
+		"ChestType": "Emerald",
+		"Life": 80,
+		"Rate": 2
+	},
+	"Row20": {
+		"ChestType": "Emerald",
+		"Life": 90,
+		"Rate": 3
+	},
+	"Row21": {
+		"ChestType": "Emerald",
+		"Life": 90,
+		"Rate": 3
+	},
+	"Row22": {
+		"ChestType": "Emerald",
+		"Life": 90,
+		"Rate": 3
+	},
+	"Row23": {
+		"ChestType": "Emerald",
+		"Life": 90,
+		"Rate": 3
+	},
+	"Row24": {
+		"ChestType": "Emerald",
+		"Life": 90,
+		"Rate": 3
+	},
+	"Row25": {
+		"ChestType": "Emerald",
+		"Life": 100,
+		"Rate": 3
+	},
+	"Row26": {
+		"ChestType": "Emerald",
+		"Life": 100,
+		"Rate": 3
+	},
+	"Row27": {
+		"ChestType": "Emerald",
+		"Life": 100,
+		"Rate": 3
+	},
+	"Row28": {
+		"ChestType": "Emerald",
+		"Life": 100,
+		"Rate": 3
+	},
+	"Row29": {
+		"ChestType": "Emerald",
+		"Life": 120,
+		"Rate": 4
+	},
+	"Row30": {
+		"ChestType": "Emerald",
+		"Life": 120,
+		"Rate": 4
+	}
+}

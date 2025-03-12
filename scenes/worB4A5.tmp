@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://cc0ywvnxgg6nu"]
+
+[ext_resource type="Script" path="res://scripts/smoother.gd" id="2_g65v7"]
+[ext_resource type="PackedScene" uid="uid://bmr1vjj86lduw" path="res://scenes/ScriptDirector.tscn" id="3_v2nn5"]
+[ext_resource type="Material" uid="uid://c3mh5p2w5s8g7" path="res://shaders/water/Water.tres" id="4_4hk56"]
+[ext_resource type="PackedScene" uid="uid://cbbammh28t1dh" path="res://scenes/player.tscn" id="4_6a0i2"]
+[ext_resource type="PackedScene" uid="uid://ydngqtuepp4g" path="res://scenes/ship.tscn" id="4_ruvqp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e4vsu"]
+
+[sub_resource type="Sky" id="Sky_kd37h"]
+sky_material = SubResource("ProceduralSkyMaterial_e4vsu")
+
+[sub_resource type="Environment" id="Environment_hcj68"]
+background_mode = 2
+sky = SubResource("Sky_kd37h")
+tonemap_mode = 2
+sdfgi_use_occlusion = true
+glow_enabled = true
+volumetric_fog_density = 0.1444
+volumetric_fog_temporal_reprojection_enabled = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_p1x3s"]
+subdivide_width = 400
+subdivide_depth = 400
+orientation = 1
+
+[node name="World" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00370556, -0.0165562, 0.01015)
+
+[node name="Smoother" type="Node" parent="."]
+script = ExtResource("2_g65v7")
+
+[node name="ScriptDirector" parent="." instance=ExtResource("3_v2nn5")]
+
+[node name="Enviroment" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Enviroment"]
+environment = SubResource("Environment_hcj68")
+
+[node name="Ship" parent="Enviroment" instance=ExtResource("4_ruvqp")]
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 0, -0.381783, 0)
+
+[node name="Water" type="MeshInstance3D" parent="Enviroment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47493, 0.31688, 0)
+mesh = SubResource("QuadMesh_p1x3s")
+surface_material_override/0 = ExtResource("4_4hk56")
+
+[node name="Player" parent="." instance=ExtResource("4_6a0i2")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.674096, 0.343509, 1.336)

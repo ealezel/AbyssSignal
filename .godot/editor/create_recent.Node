@@ -1,0 +1,14 @@
+MeshInstance3D
+Node3D
+StaticBody3D
+Sprite2D
+AnimationPlayer
+CollisionShape3D
+CenterContainer
+TextureRect
+Label
+CanvasLayer
+RayCast3D
+LightmapProbe
+LightmapGI
+VoxelGI

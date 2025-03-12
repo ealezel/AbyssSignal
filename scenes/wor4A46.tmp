@@ -1,0 +1,219 @@
+[gd_scene load_steps=29 format=3 uid="uid://cc0ywvnxgg6nu"]
+
+[ext_resource type="PackedScene" uid="uid://bwnclg6c3cvhb" path="res://scenes/water.tscn" id="2_fdepl"]
+[ext_resource type="Script" path="res://scripts/smoother.gd" id="2_g65v7"]
+[ext_resource type="Script" path="res://scenes/TimeDirector.gd" id="2_jdlyg"]
+[ext_resource type="PackedScene" uid="uid://bpy0xqjh0s05n" path="res://scenes/wall_clock.tscn" id="3_00u7n"]
+[ext_resource type="PackedScene" uid="uid://bmr1vjj86lduw" path="res://scenes/ScriptDirector.tscn" id="3_v2nn5"]
+[ext_resource type="PackedScene" uid="uid://cbbammh28t1dh" path="res://scenes/player.tscn" id="4_6a0i2"]
+[ext_resource type="PackedScene" uid="uid://ydngqtuepp4g" path="res://scenes/ship.tscn" id="4_ruvqp"]
+[ext_resource type="Texture2D" uid="uid://clubwllwj4tkn" path="res://sprites/fog_texture_v2.png" id="7_cc4kg"]
+[ext_resource type="Shader" path="res://shaders/water2/Water.gdshader" id="9_myd14"]
+[ext_resource type="Texture2D" uid="uid://rfdh2ifq6tgw" path="res://shaders/water2/water_normal1.tres" id="10_an2a4"]
+[ext_resource type="Texture2D" uid="uid://c15k0k7r635ol" path="res://shaders/water2/water_normal2.tres" id="11_g8prj"]
+[ext_resource type="Texture2D" uid="uid://b6q8x2v6b286h" path="res://shaders/water2/wave_texture.tres" id="12_k7t8m"]
+[ext_resource type="Texture2D" uid="uid://buva5pk4rq5ka" path="res://shaders/water2/wave_bump_texture.tres" id="13_u4ooj"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2rne1"]
+ground_bottom_color = Color(0, 0, 0, 1)
+use_debanding = false
+
+[sub_resource type="Sky" id="Sky_86des"]
+sky_material = SubResource("ProceduralSkyMaterial_2rne1")
+
+[sub_resource type="Environment" id="Environment_5xh5d"]
+background_mode = 2
+sky = SubResource("Sky_86des")
+tonemap_mode = 2
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+glow_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.029
+fog_height_density = 1.4744
+volumetric_fog_albedo = Color(0, 0, 0, 1)
+volumetric_fog_length = 126.27
+
+[sub_resource type="QuadMesh" id="QuadMesh_xgcht"]
+resource_local_to_scene = true
+size = Vector2(1000, 1000)
+subdivide_width = 500
+subdivide_depth = 500
+orientation = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_783np"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("9_myd14")
+shader_parameter/albedo = Color(0, 0.262745, 0.47451, 1)
+shader_parameter/albedo2 = Color(0, 0.176471, 0.305882, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.02
+shader_parameter/wave_direction = Vector2(0, -0.3)
+shader_parameter/wave_direction2 = Vector2(0, -0.5)
+shader_parameter/time_scale = 0.08
+shader_parameter/noise_scale = 100.0
+shader_parameter/height_scale = 1.5
+shader_parameter/color_deep = Color(0, 0, 0, 1)
+shader_parameter/color_shallow = Color(0, 0, 0, 1)
+shader_parameter/beers_law = 2.0
+shader_parameter/depth_offset = 1.5
+shader_parameter/edge_scale = 0.3
+shader_parameter/near = 1.0
+shader_parameter/far = 1000.0
+shader_parameter/edge_color = Color(1, 1, 1, 1)
+shader_parameter/wave = ExtResource("12_k7t8m")
+shader_parameter/wave_bump = ExtResource("13_u4ooj")
+shader_parameter/texture_normal = ExtResource("10_an2a4")
+shader_parameter/texture_normal2 = ExtResource("11_g8prj")
+
+[sub_resource type="Animation" id="Animation_liimj"]
+resource_name = "tilt"
+length = 16.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -12, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4, 8, 12, 16),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.0523599), Vector3(0, 0, 0), Vector3(0, 0, -0.0523599), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_18o2i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -12, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ulcc"]
+_data = {
+"RESET": SubResource("Animation_18o2i"),
+"tilt": SubResource("Animation_liimj")
+}
+
+[sub_resource type="Gradient" id="Gradient_xd5fm"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.12549)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_n6rbm"]
+gradient = SubResource("Gradient_xd5fm")
+
+[sub_resource type="Curve" id="Curve_nn7cy"]
+max_value = 4.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 4), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_oqqsh"]
+width = 2048
+curve = SubResource("Curve_nn7cy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5852h"]
+lifetime_randomness = 0.1
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+spread = 100.0
+gravity = Vector3(0, 0, 0)
+radial_accel_max = 1.0
+scale_curve = SubResource("CurveTexture_oqqsh")
+color_ramp = SubResource("GradientTexture1D_n6rbm")
+anim_offset_max = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o77ej"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("7_cc4kg")
+disable_receive_shadows = true
+billboard_mode = 3
+particles_anim_h_frames = 8
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_lkivr"]
+material = SubResource("StandardMaterial3D_o77ej")
+size = Vector2(0.5, 0.5)
+
+[node name="World" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00370556, -0.0165562, 0.01015)
+
+[node name="Smoother" type="Node" parent="."]
+script = ExtResource("2_g65v7")
+
+[node name="TimeDirector" type="Node" parent="."]
+script = ExtResource("2_jdlyg")
+INGAME_SPEED = 100.0
+
+[node name="ScriptDirector" parent="." instance=ExtResource("3_v2nn5")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5xh5d")
+
+[node name="Enviroment" type="Node3D" parent="."]
+
+[node name="Water" parent="Enviroment" instance=ExtResource("2_fdepl")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3041, -1.43999, -5.75497)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_xgcht")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_783np")
+
+[node name="Ship" parent="Enviroment" instance=ExtResource("4_ruvqp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12, 0)
+
+[node name="WallClock" parent="Enviroment/Ship" instance=ExtResource("3_00u7n")]
+transform = Transform3D(-0.833333, 0, -7.28523e-08, 0, 0.833333, 0, 7.28523e-08, 0, -0.833333, 4.35732, 17.9677, -1.06811)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enviroment/Ship"]
+libraries = {
+"": SubResource("AnimationLibrary_2ulcc")
+}
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Enviroment"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -2.33524, -4.65435)
+amount = 256
+speed_scale = 0.1
+visibility_aabb = AABB(-4, -4, -2.51311, 8, 8, 5.02621)
+process_material = SubResource("ParticleProcessMaterial_5852h")
+draw_pass_1 = SubResource("QuadMesh_lkivr")
+
+[node name="Player" parent="." instance=ExtResource("4_6a0i2")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -7.76029, 3.99802, 0.00944634)

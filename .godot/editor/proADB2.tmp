@@ -1,0 +1,60 @@
+[editor_metadata]
+
+executable_path="C:/Godot/Godot_v4.2-stable_win64.exe"
+show_all_nodes_for_node_selection=true
+use_advanced_connections=false
+
+[debug_options]
+
+run_live_debug=true
+run_reload_scripts=true
+run_debug_collisions=true
+
+[linked_properties]
+
+Node3D:scale=true
+MeshInstance3D:scale=false
+CSGMesh3D:scale=true
+CharacterBody3D:scale=true
+CollisionShape3D:scale=false
+Camera3D:scale=true
+StandardMaterial3D:uv1_scale=true
+StandardMaterial3D:uv2_scale=true
+Area3D:scale=true
+DirectionalLight3D:scale=true
+CanvasLayer:scale=true
+ColorRect:scale=true
+MeshInstance2D:scale=true
+SubViewportContainer:scale=true
+MultiNodeEdit:scale=true
+StaticBody3D:scale=true
+NavigationRegion3D:scale=true
+CSGBox3D:scale=true
+
+[recent_files]
+
+scenes=["res://scenes/water.tscn", "res://scenes/ship.tscn", "res://scenes/player.tscn", "res://scenes/world.tscn", "res://models/Ship.gltf", "res://scenes/ScriptDirector.tscn", "res://scenes/floor.tscn", "res://scenes/water_hider.tscn", "res://scenes/WaterPlane.tscn", "res://scenes/Ship.tscn"]
+scripts=["Node", "res://scripts/smoother.gd", "res://scripts/ship.gd", "res://scripts/water_hider.gd", "res://scripts/Greatings.gd", "res://scripts/FirstInteraction.gd", "res://scripts/FirstArea3D.gd", "res://scripts/world.gd", "res://scripts/ScriptDirector.gd", "res://scripts/floor.gd"]
+
+[script_setup]
+
+last_selected_language="GDScript"
+
+[dialog_bounds]
+
+editor_settings=Rect2(510, 190, 900, 700)
+create_new_node=Rect2(510, 190, 900, 883)
+project_settings=Rect2(510, 190, 900, 700)
+
+[color_picker]
+
+recent_presets=PackedColorArray(1.8771e-06, 0.399564, 0.472869, 1, 0, 0.0514855, 0.109844, 1, 0.99558, 0.99558, 0.99558, 1, 0.140447, 0.140447, 0.140447, 1, 0.226707, 0.226707, 0.226707, 1, 0.0400104, 0.208949, 0.331039, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0)
+
+[project_settings]
+
+show_builtin_actions=false
+
+[shader_setup]
+
+last_selected_mode=1
+last_selected_language="Shader"

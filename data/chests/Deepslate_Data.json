@@ -1,0 +1,152 @@
+{
+	"Row1": {
+		"ChestType": "Deepslate",
+		"Life": 30,
+		"Rate": 100
+	},
+	"Row2": {
+		"ChestType": "Deepslate",
+		"Life": 30,
+		"Rate": 100
+	},
+	"Row3": {
+		"ChestType": "Deepslate",
+		"Life": 40,
+		"Rate": 100
+	},
+	"Row4": {
+		"ChestType": "Deepslate",
+		"Life": 50,
+		"Rate": 100
+	},
+	"Row5": {
+		"ChestType": "Deepslate",
+		"Life": 50,
+		"Rate": 100
+	},
+	"Row6": {
+		"ChestType": "Deepslate",
+		"Life": 70,
+		"Rate": 100
+	},
+	"Row7": {
+		"ChestType": "Deepslate",
+		"Life": 70,
+		"Rate": 100
+	},
+	"Row8": {
+		"ChestType": "Deepslate",
+		"Life": 90,
+		"Rate": 100
+	},
+	"Row9": {
+		"ChestType": "Deepslate",
+		"Life": 90,
+		"Rate": 100
+	},
+	"Row10": {
+		"ChestType": "Deepslate",
+		"Life": 90,
+		"Rate": 100
+	},
+	"Row11": {
+		"ChestType": "Deepslate",
+		"Life": 90,
+		"Rate": 100
+	},
+	"Row12": {
+		"ChestType": "Deepslate",
+		"Life": 90,
+		"Rate": 100
+	},
+	"Row13": {
+		"ChestType": "Deepslate",
+		"Life": 90,
+		"Rate": 100
+	},
+	"Row14": {
+		"ChestType": "Deepslate",
+		"Life": 90,
+		"Rate": 100
+	},
+	"Row15": {
+		"ChestType": "Deepslate",
+		"Life": 90,
+		"Rate": 100
+	},
+	"Row16": {
+		"ChestType": "Deepslate",
+		"Life": 100,
+		"Rate": 100
+	},
+	"Row17": {
+		"ChestType": "Deepslate",
+		"Life": 100,
+		"Rate": 100
+	},
+	"Row18": {
+		"ChestType": "Deepslate",
+		"Life": 100,
+		"Rate": 100
+	},
+	"Row19": {
+		"ChestType": "Deepslate",
+		"Life": 100,
+		"Rate": 100
+	},
+	"Row20": {
+		"ChestType": "Deepslate",
+		"Life": 100,
+		"Rate": 100
+	},
+	"Row21": {
+		"ChestType": "Deepslate",
+		"Life": 110,
+		"Rate": 100
+	},
+	"Row22": {
+		"ChestType": "Deepslate",
+		"Life": 110,
+		"Rate": 100
+	},
+	"Row23": {
+		"ChestType": "Deepslate",
+		"Life": 110,
+		"Rate": 100
+	},
+	"Row24": {
+		"ChestType": "Deepslate",
+		"Life": 110,
+		"Rate": 100
+	},
+	"Row25": {
+		"ChestType": "Deepslate",
+		"Life": 120,
+		"Rate": 100
+	},
+	"Row26": {
+		"ChestType": "Deepslate",
+		"Life": 120,
+		"Rate": 100
+	},
+	"Row27": {
+		"ChestType": "Deepslate",
+		"Life": 120,
+		"Rate": 100
+	},
+	"Row28": {
+		"ChestType": "Deepslate",
+		"Life": 120,
+		"Rate": 100
+	},
+	"Row29": {
+		"ChestType": "Deepslate",
+		"Life": 150,
+		"Rate": 100
+	},
+	"Row30": {
+		"ChestType": "Deepslate",
+		"Life": 150,
+		"Rate": 100
+	}
+}

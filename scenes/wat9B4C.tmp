@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://bwnclg6c3cvhb"]
+
+[ext_resource type="Shader" path="res://shaders/water2/Water.gdshader" id="1_24ij8"]
+[ext_resource type="Texture2D" uid="uid://rfdh2ifq6tgw" path="res://shaders/water2/water_normal1.tres" id="2_4ctmx"]
+[ext_resource type="Texture2D" uid="uid://c15k0k7r635ol" path="res://shaders/water2/water_normal2.tres" id="3_lab7o"]
+[ext_resource type="Texture2D" uid="uid://b6q8x2v6b286h" path="res://shaders/water2/wave_texture.tres" id="3_p5smv"]
+[ext_resource type="Texture2D" uid="uid://buva5pk4rq5ka" path="res://shaders/water2/wave_bump_texture.tres" id="4_a1wie"]
+[ext_resource type="Script" path="res://scripts/water.gd" id="6_g7yy8"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_3iwqi"]
+resource_local_to_scene = true
+size = Vector2(10.05, 10.05)
+subdivide_width = 199
+subdivide_depth = 199
+orientation = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iaecc"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_24ij8")
+shader_parameter/albedo = Color(0, 0.32, 0.43, 1)
+shader_parameter/albedo2 = Color(0, 0.47, 0.76, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.02
+shader_parameter/wave_direction = Vector2(0.5, -0.2)
+shader_parameter/wave_direction2 = Vector2(-0.5, 0.5)
+shader_parameter/time_scale = 0.1
+shader_parameter/noise_scale = 20.0
+shader_parameter/height_scale = 2.0
+shader_parameter/color_deep = Color(0.11, 0.29, 0.33, 1)
+shader_parameter/color_shallow = Color(0, 0.47, 0.76, 1)
+shader_parameter/beers_law = 2.0
+shader_parameter/depth_offset = 1.5
+shader_parameter/edge_scale = 0.3
+shader_parameter/near = 1.0
+shader_parameter/far = 1900.0
+shader_parameter/edge_color = Color(0, 0, 0, 1)
+shader_parameter/wave = ExtResource("3_p5smv")
+shader_parameter/wave_bump = ExtResource("4_a1wie")
+shader_parameter/texture_normal = ExtResource("2_4ctmx")
+shader_parameter/texture_normal2 = ExtResource("3_lab7o")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vmthx"]
+
+[node name="Water" type="MeshInstance3D"]
+gi_mode = 0
+mesh = SubResource("QuadMesh_3iwqi")
+surface_material_override/0 = SubResource("ShaderMaterial_iaecc")
+script = ExtResource("6_g7yy8")
+
+[node name="Tilt Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="Swimming Area" type="Area3D" parent="." groups=["water"]]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, -500, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Swimming Area"]
+shape = SubResource("BoxShape3D_vmthx")
+
+[connection signal="timeout" from="Tilt Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Swimming Area" to="." method="_on_swimming_area_body_entered"]
+[connection signal="body_exited" from="Swimming Area" to="." method="_on_swimming_area_body_exited"]

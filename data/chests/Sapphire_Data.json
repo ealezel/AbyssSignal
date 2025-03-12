@@ -1,0 +1,152 @@
+{
+	"Row1": {
+		"ChestType": "Sapphire",
+		"Life": 20,
+		"Rate": 0
+	},
+	"Row2": {
+		"ChestType": "Sapphire",
+		"Life": 30,
+		"Rate": 0
+	},
+	"Row3": {
+		"ChestType": "Sapphire",
+		"Life": 40,
+		"Rate": 0
+	},
+	"Row4": {
+		"ChestType": "Sapphire",
+		"Life": 40,
+		"Rate": 0
+	},
+	"Row5": {
+		"ChestType": "Sapphire",
+		"Life": 50,
+		"Rate": 1
+	},
+	"Row6": {
+		"ChestType": "Sapphire",
+		"Life": 50,
+		"Rate": 1
+	},
+	"Row7": {
+		"ChestType": "Sapphire",
+		"Life": 60,
+		"Rate": 1
+	},
+	"Row8": {
+		"ChestType": "Sapphire",
+		"Life": 60,
+		"Rate": 1
+	},
+	"Row9": {
+		"ChestType": "Sapphire",
+		"Life": 70,
+		"Rate": 2
+	},
+	"Row10": {
+		"ChestType": "Sapphire",
+		"Life": 70,
+		"Rate": 2
+	},
+	"Row11": {
+		"ChestType": "Sapphire",
+		"Life": 70,
+		"Rate": 2
+	},
+	"Row12": {
+		"ChestType": "Sapphire",
+		"Life": 70,
+		"Rate": 2
+	},
+	"Row13": {
+		"ChestType": "Sapphire",
+		"Life": 70,
+		"Rate": 2
+	},
+	"Row14": {
+		"ChestType": "Sapphire",
+		"Life": 80,
+		"Rate": 3
+	},
+	"Row15": {
+		"ChestType": "Sapphire",
+		"Life": 80,
+		"Rate": 3
+	},
+	"Row16": {
+		"ChestType": "Sapphire",
+		"Life": 80,
+		"Rate": 3
+	},
+	"Row17": {
+		"ChestType": "Sapphire",
+		"Life": 80,
+		"Rate": 3
+	},
+	"Row18": {
+		"ChestType": "Sapphire",
+		"Life": 80,
+		"Rate": 3
+	},
+	"Row19": {
+		"ChestType": "Sapphire",
+		"Life": 90,
+		"Rate": 4
+	},
+	"Row20": {
+		"ChestType": "Sapphire",
+		"Life": 90,
+		"Rate": 4
+	},
+	"Row21": {
+		"ChestType": "Sapphire",
+		"Life": 90,
+		"Rate": 4
+	},
+	"Row22": {
+		"ChestType": "Sapphire",
+		"Life": 90,
+		"Rate": 4
+	},
+	"Row23": {
+		"ChestType": "Sapphire",
+		"Life": 90,
+		"Rate": 4
+	},
+	"Row24": {
+		"ChestType": "Sapphire",
+		"Life": 100,
+		"Rate": 5
+	},
+	"Row25": {
+		"ChestType": "Sapphire",
+		"Life": 100,
+		"Rate": 5
+	},
+	"Row26": {
+		"ChestType": "Sapphire",
+		"Life": 100,
+		"Rate": 5
+	},
+	"Row27": {
+		"ChestType": "Sapphire",
+		"Life": 120,
+		"Rate": 6
+	},
+	"Row28": {
+		"ChestType": "Sapphire",
+		"Life": 120,
+		"Rate": 6
+	},
+	"Row29": {
+		"ChestType": "Sapphire",
+		"Life": 140,
+		"Rate": 7
+	},
+	"Row30": {
+		"ChestType": "Sapphire",
+		"Life": 140,
+		"Rate": 7
+	}
+}
