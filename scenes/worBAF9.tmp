@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cc0ywvnxgg6nu"]
+[gd_scene load_steps=49 format=3 uid="uid://cc0ywvnxgg6nu"]
 
 [ext_resource type="PackedScene" uid="uid://bwnclg6c3cvhb" path="res://scenes/water.tscn" id="2_fdepl"]
 [ext_resource type="Script" path="res://scripts/smoother.gd" id="2_g65v7"]
@@ -17,6 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://buva5pk4rq5ka" path="res://shaders/water2/wave_bump_texture.tres" id="13_u4ooj"]
 [ext_resource type="PackedScene" uid="uid://cpf1kw0lrcgd0" path="res://models/lamp/ShipLamp.glb" id="14_03r0g"]
 [ext_resource type="Script" path="res://scripts/FPSCounter.gd" id="17_e1yjo"]
+[ext_resource type="Texture2D" uid="uid://bkhoc02078rqr" path="res://models/shader_test/FirePattern.png" id="19_7he6n"]
+[ext_resource type="Shader" path="res://scenes/ghost_gelly.gdshader" id="20_sgabd"]
+[ext_resource type="ArrayMesh" uid="uid://ddm5cgo7k486f" path="res://models/shader_test/FinalBaseMesh.obj" id="22_io1w3"]
+[ext_resource type="Shader" path="res://scenes/ghost_gelly_controlled.gdshader" id="23_ad23e"]
 
 [sub_resource type="GDScript" id="GDScript_280bb"]
 script/source = "extends Node
@@ -24,8 +28,8 @@ script/source = "extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-"
+
+	pass # Replace with function body."
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_300y7"]
 use_debanding = false
@@ -194,6 +198,34 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_o77ej")
 size = Vector2(0.5, 0.5)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kafbi"]
+render_priority = 0
+shader = ExtResource("23_ad23e")
+shader_parameter/height_scale = 0.5
+shader_parameter/alpha = 0.99
+shader_parameter/color = Color(0, 0.00392157, 0.00392157, 1)
+shader_parameter/noise = ExtResource("19_7he6n")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_thfsw"]
+render_priority = 0
+shader = ExtResource("20_sgabd")
+shader_parameter/height_scale = 0.5
+shader_parameter/alpha = 1.0
+shader_parameter/color = Color(0, 0.0117647, 0.0117647, 1)
+shader_parameter/precision = 1.0
+shader_parameter/speed = 1.0
+shader_parameter/noise = ExtResource("19_7he6n")
+
+[sub_resource type="TorusMesh" id="TorusMesh_8c4cr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mjq0k"]
+render_priority = 0
+shader = ExtResource("23_ad23e")
+shader_parameter/height_scale = 0.5
+shader_parameter/alpha = 1.0
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/noise = ExtResource("19_7he6n")
+
 [node name="World" type="Node3D"]
 script = SubResource("GDScript_280bb")
 
@@ -226,7 +258,7 @@ volume_db = -10.0
 autoplay = true
 
 [node name="Ship" parent="Enviroment" instance=ExtResource("4_ruvqp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.00335288)
 
 [node name="WallClock" parent="Enviroment/Ship" instance=ExtResource("3_00u7n")]
 transform = Transform3D(-0.833333, 0, -7.28523e-08, 0, 0.833333, 0, 7.28523e-08, 0, -0.833333, 4.35732, 17.9677, -1.06811)
@@ -285,3 +317,33 @@ offset_top = 23.0
 offset_right = 1880.0
 offset_bottom = 46.0
 script = ExtResource("17_e1yjo")
+
+[node name="FinalBaseMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.299153, -0.0169076, 0.0201181, -0.0146302, 0.349576, -0.0023199, -0.0171271, -0.00329446, -0.349414, 2.05787, 13.5078, 7.3549)
+mesh = ExtResource("22_io1w3")
+surface_material_override/0 = SubResource("ShaderMaterial_kafbi")
+
+[node name="FinalBaseMesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.269238, 0.013043, -0.0155196, -0.0131672, 0.269673, -0.00178964, 0.0154144, 0.00254144, 0.269548, 2.05787, 6.95504, -25.7188)
+mesh = ExtResource("22_io1w3")
+surface_material_override/0 = SubResource("ShaderMaterial_kafbi")
+
+[node name="FinalBaseMesh3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.199435, 0.00966145, -0.011496, -0.00975347, 0.199758, -0.00132566, 0.0114181, 0.00188255, 0.199665, 1.34637, 7.89, -25.235)
+mesh = ExtResource("22_io1w3")
+surface_material_override/0 = SubResource("ShaderMaterial_thfsw")
+
+[node name="FinalBaseMesh4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.199435, 0.00966145, -0.011496, -0.00975347, 0.199758, -0.00132566, 0.0114181, 0.00188255, 0.199665, -2.62966, 7.65654, 5.67129)
+mesh = ExtResource("22_io1w3")
+surface_material_override/0 = SubResource("ShaderMaterial_thfsw")
+
+[node name="FinalBaseMesh5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.199435, 0.00966145, -0.011496, -0.00975347, 0.199758, -0.00132566, 0.0114181, 0.00188255, 0.199665, 2.93319, 13.5139, -8.94511)
+mesh = ExtResource("22_io1w3")
+surface_material_override/0 = SubResource("ShaderMaterial_thfsw")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, -0.0366483, -1.49955, 0, 1.49955, -0.0366483, 0, 3.95703, 16.8586)
+mesh = SubResource("TorusMesh_8c4cr")
+surface_material_override/0 = SubResource("ShaderMaterial_mjq0k")
