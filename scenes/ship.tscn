@@ -1,11 +1,70 @@
-[gd_scene load_steps=33 format=3 uid="uid://ydngqtuepp4g"]
+[gd_scene load_steps=40 format=3 uid="uid://ydngqtuepp4g"]
 
 [ext_resource type="Script" path="res://scripts/ship.gd" id="1_cr8a1"]
 [ext_resource type="Material" uid="uid://dqgp7qmq2mxib" path="res://shaders/water_mask/water_mask.tres" id="2_ygqsq"]
 [ext_resource type="PackedScene" uid="uid://2v15e5yyfoml" path="res://models/ship/Ship Model.glb" id="3_jceny"]
+[ext_resource type="AudioStream" uid="uid://0mbrj0hvv13i" path="res://sounds/door/open_wooden_door.mp3" id="3_ojf8v"]
+[ext_resource type="Script" path="res://scripts/door_script.gd" id="3_q5qev"]
+[ext_resource type="AudioStream" uid="uid://ctwpyosf0asgl" path="res://sounds/door/close_wooden_door.mp3" id="4_fg68v"]
+
+[sub_resource type="Animation" id="Animation_qbor6"]
+resource_name = "Control Door_close"
+length = 0.5
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ControlDoorFrame/ControlDoor:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ControlDoorFrame/ControlDoor/Control Door:collision_layer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.475, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 0, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ControlDoorFrame/ControlDoor/Control Door:collision_mask")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.475, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 0, 1]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CloseWoodenDoor")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.2,
+"stream": ExtResource("4_fg68v")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_6mk6s"]
-resource_name = "Control Door"
+resource_name = "Control Door_open"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -43,9 +102,80 @@ tracks/2/keys = {
 "update": 1,
 "values": [1, 0, 1]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("OpenWoodenDoor")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.287008,
+"start_offset": 0.5,
+"stream": ExtResource("3_ojf8v")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="Animation" id="Animation_0swun"]
+resource_name = "Hold Door_close"
+length = 0.5
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HoldDoorFrame/HoldDoor:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HoldDoorFrame/HoldDoor/Hold Door:collision_layer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.475, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 0, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HoldDoorFrame/HoldDoor/Hold Door:collision_mask")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.475, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 0, 1]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CloseWoodenDoor")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.2,
+"stream": ExtResource("4_fg68v")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_a7j6m"]
-resource_name = "Hold Door"
+resource_name = "Hold Door_open"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -83,6 +213,21 @@ tracks/2/keys = {
 "update": 1,
 "values": [1, 0, 1]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("OpenWoodenDoor")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.287008,
+"start_offset": 0.5,
+"stream": ExtResource("3_ojf8v")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_cg4cp"]
 length = 0.001
@@ -231,8 +376,48 @@ tracks/11/keys = {
 "values": [1]
 }
 
+[sub_resource type="Animation" id="Animation_r7yrk"]
+resource_name = "Steel Door_close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SteelDoorFrame/SteelDoorInnerFrame/SteelDoorHinge/SteelDoorPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -0.436332, 0), Vector3(0, 1.5708, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SteelDoorFrame/SteelDoorInnerFrame/SteelDoorHinge/SteelDoorPivot/SteelDoor/Steel Door:collision_layer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.475, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 0, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SteelDoorFrame/SteelDoorInnerFrame/SteelDoorHinge/SteelDoorPivot/SteelDoor/Steel Door:collision_mask")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
 [sub_resource type="Animation" id="Animation_h1khj"]
-resource_name = "Steel Door"
+resource_name = "Steel Door_open"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -271,8 +456,64 @@ tracks/2/keys = {
 "values": [1, 0, 1]
 }
 
+[sub_resource type="Animation" id="Animation_c1sd1"]
+resource_name = "WC Door_close"
+length = 0.5
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WCDoorFrame/WCDoor:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WCDoorFrame/WCDoor/WC Door:collision_layer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.475, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 0, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WCDoorFrame/WCDoor/WC Door:collision_mask")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.475, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 0, 1]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath("CloseWoodenDoor")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 1.83746,
+"start_offset": 0.2,
+"stream": ExtResource("4_fg68v")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+
 [sub_resource type="Animation" id="Animation_jbw46"]
-resource_name = "WC Door"
+resource_name = "WC Door_open"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -310,14 +551,33 @@ tracks/2/keys = {
 "update": 1,
 "values": [1, 0, 1]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = false
+tracks/3/path = NodePath("OpenWoodenDoor")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.287008,
+"start_offset": 0.5,
+"stream": ExtResource("3_ojf8v")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_idk1t"]
 _data = {
-"Control Door": SubResource("Animation_6mk6s"),
-"Hold Door": SubResource("Animation_a7j6m"),
+"Control Door_close": SubResource("Animation_qbor6"),
+"Control Door_open": SubResource("Animation_6mk6s"),
+"Hold Door_close": SubResource("Animation_0swun"),
+"Hold Door_open": SubResource("Animation_a7j6m"),
 "RESET": SubResource("Animation_cg4cp"),
-"Steel Door": SubResource("Animation_h1khj"),
-"WC Door": SubResource("Animation_jbw46")
+"Steel Door_close": SubResource("Animation_r7yrk"),
+"Steel Door_open": SubResource("Animation_h1khj"),
+"WC Door_close": SubResource("Animation_c1sd1"),
+"WC Door_open": SubResource("Animation_jbw46")
 }
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8pruu"]
@@ -398,7 +658,14 @@ script = ExtResource("1_cr8a1")
 [node name="Ship" parent="Ship Model" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000865221, -0.0161858, 0.00310194)
 
-[node name="Ship Animations" type="AnimationPlayer" parent="Ship Model/Ship" index="0" groups=["shipAnim"]]
+[node name="OpenWoodenDoor" type="AudioStreamPlayer" parent="Ship Model/Ship" index="0"]
+volume_db = -10.0
+pitch_scale = 10.0
+
+[node name="CloseWoodenDoor" type="AudioStreamPlayer" parent="Ship Model/Ship" index="1"]
+volume_db = -10.0
+
+[node name="Ship Animations" type="AnimationPlayer" parent="Ship Model/Ship" index="2" groups=["shipAnim"]]
 libraries = {
 "": SubResource("AnimationLibrary_idk1t")
 }
@@ -409,6 +676,7 @@ libraries = {
 shape = SubResource("ConcavePolygonShape3D_8pruu")
 
 [node name="Control Door" type="StaticBody3D" parent="Ship Model/Ship/ControlDoorFrame/ControlDoor" index="4" groups=["door"]]
+script = ExtResource("3_q5qev")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ship Model/Ship/ControlDoorFrame/ControlDoor/Control Door"]
 shape = SubResource("ConvexPolygonShape3D_cx8fm")
@@ -422,6 +690,7 @@ transform = Transform3D(-0.348957, -3.05068e-08, 0, 3.05068e-08, -0.348957, 0, 0
 shape = SubResource("ConcavePolygonShape3D_xdwaw")
 
 [node name="Hold Door" type="StaticBody3D" parent="Ship Model/Ship/HoldDoorFrame/HoldDoor" index="4" groups=["door"]]
+script = ExtResource("3_q5qev")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ship Model/Ship/HoldDoorFrame/HoldDoor/Hold Door"]
 shape = SubResource("ConvexPolygonShape3D_4pbas")
@@ -471,6 +740,7 @@ transform = Transform3D(3.09059e-06, 0, -14.2857, 0, 14.2857, 0, 15.873, 0, 2.78
 
 [node name="Steel Door" type="StaticBody3D" parent="Ship Model/Ship/SteelDoorFrame/SteelDoorInnerFrame/SteelDoorHinge/SteelDoorPivot/SteelDoor" index="3" groups=["door"]]
 collision_mask = 0
+script = ExtResource("3_q5qev")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ship Model/Ship/SteelDoorFrame/SteelDoorInnerFrame/SteelDoorHinge/SteelDoorPivot/SteelDoor/Steel Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0169069, 0.354464, 0.194092)
@@ -481,7 +751,7 @@ shape = SubResource("BoxShape3D_pks6d")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ship Model/Ship/SteelDoorFrame/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ax8ll")
 
-[node name="Toilet" parent="Ship Model/Ship" index="14"]
+[node name="Toilet" parent="Ship Model/Ship" index="16"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.132514)
 
 [node name="ToiletCap" parent="Ship Model/Ship/Toilet" index="0"]
@@ -493,11 +763,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0499, 13.9658, 8.10487)
 shape = SubResource("ConvexPolygonShape3D_0ugkm")
 
 [node name="WC Door" type="StaticBody3D" parent="Ship Model/Ship/WCDoorFrame/WCDoor" index="4" groups=["door"]]
+script = ExtResource("3_q5qev")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ship Model/Ship/WCDoorFrame/WCDoor/WC Door"]
 shape = SubResource("ConvexPolygonShape3D_hq50e")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Ship Model/Ship" index="16"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Ship Model/Ship" index="18"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ship Model/Ship/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_v2j17")

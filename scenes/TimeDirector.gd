@@ -9,7 +9,7 @@ const INGAME_TO_REAL_MINUTE_DURATION = (2 * PI) / MINUTES_PER_DAY
 signal time_tick(day:int, hour:int, minute:int)
 
 #@export var gradient_texture:GradientTexture1D
-@export var INGAME_SPEED = 20.0
+@export var INGAME_SPEED = 1
 @export var INITIAL_HOUR = 12:
 	set(h):
 		INITIAL_HOUR = h

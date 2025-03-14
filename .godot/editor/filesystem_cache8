@@ -1,9 +1,14 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1741798533
-Challenge_Data.json::JSON::-1::1717213578::0::1::::<><>::
-default_bus_layout.tres::AudioBusLayout::2712639656785699602::1741798489::0::1::::<><>::
+::res://::1741971993
+default_bus_layout.tres::AudioBusLayout::2712639656785699602::1741962746::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1701468382::0::1::::<><>::
 icon.svg::CompressedTexture2D::8500161767593105524::1701467929::1701467929::1::::<><>::
+::res://adaptive-audio-player-main/::1741971950
+aap.svg::CompressedTexture2D::92221961319854005::1741971571::1741971585::1::::<><>::
+aaplayout.tres::AudioBusLayout::2746127498672288997::1741971571::0::1::::<><>::
+adaptiveaudioplayer.gd::GDScript::-1::1741971571::0::1::::AdaptiveAudioPlayer<>AudioStreamPlayer3D<>res://adaptive-audio-player-main/aap.svg::
+player_autoload.gd::GDScript::-1::1741971950::0::1::::<>Node<>::
+README.md::TextFile::-1::1741971571::0::1::::<><>::
 ::res://addons/::1741794805
 ::res://addons/datatable_godot/::1741795513
 datatable.gd::GDScript::-1::1717350654::0::1::::<>EditorPlugin<>::
@@ -215,46 +220,52 @@ Ship_wood_brick.jpg::CompressedTexture2D::2836274924725541446::1702253430::17022
 Ship_wood_brick_normal.png::CompressedTexture2D::1915718385180535855::1702253430::1702253430::1::::<><>::
 Ship_wood_flat.jpg::CompressedTexture2D::2759940834085999913::1702253430::1702253430::1::::<><>::
 Ship_wood_flat_normal.png::CompressedTexture2D::6278005654955974986::1702253430::1702253430::1::::<><>::
-::res://scenes/::1741798463
-player.tscn::PackedScene::4845116660670618141::1741798293::0::1::::<><>::res://scripts/player.gd<>uid://d0me6w6ag2qki::::res://sprites/kenney/PNG (Transparent)/circle_05.png<>uid://1n2sfxwsppn4::::res://sounds/Metal Step Faded.mp3<>uid://bm4ifm6js12qw::::res://sounds/Flashlight.mp3
+::res://scenes/::1741971950
+player.tscn::PackedScene::4845116660670618141::1741971741::0::1::::<><>::res://scripts/player.gd<>uid://d0me6w6ag2qki::::res://sprites/kenney/PNG (Transparent)/circle_05.png<>uid://1n2sfxwsppn4::::res://sounds/Metal Step Faded.mp3<>uid://bm4ifm6js12qw::::res://sounds/Flashlight.mp3
 ScriptDirector.tscn::PackedScene::3265397860807059698::1701622220::0::1::::<><>::res://scripts/ScriptDirector.gd<>res://scripts/Greatings.gd<>res://scripts/GameData.gd<>res://scripts/FirstSunset.gd<>res://scripts/FirstInteraction.gd
-ship.tscn::PackedScene::1691526286883897876::1741798293::0::1::::<><>::res://scripts/ship.gd<>uid://dqgp7qmq2mxib::::res://shaders/water_mask/water_mask.tres<>uid://2v15e5yyfoml::::res://models/ship/Ship Model.glb
-TimeDirector.gd::GDScript::-1::1703177708::0::1::::<>Node<>::
+ship.tscn::PackedScene::1691526286883897876::1741971950::0::1::::<><>::res://scripts/ship.gd<>uid://dqgp7qmq2mxib::::res://shaders/water_mask/water_mask.tres<>uid://2v15e5yyfoml::::res://models/ship/Ship Model.glb<>uid://0mbrj0hvv13i::::res://sounds/door/open_wooden_door.mp3<>res://scripts/door_script.gd<>uid://ctwpyosf0asgl::::res://sounds/door/close_wooden_door.mp3
+TimeDirector.gd::GDScript::-1::1741801275::0::1::::<>Node<>::
 WallClock.gd::GDScript::-1::1701981203::0::1::::<>Node3D<>::
-wall_clock.tscn::PackedScene::3490358257069031469::1717373209::0::1::::<><>::uid://btrrv5m8cywwv::::res://models/clock/wall_clock.glb<>res://scenes/WallClock.gd
+wall_clock.tscn::PackedScene::3490358257069031469::1741971742::0::1::::<><>::uid://btrrv5m8cywwv::::res://models/clock/wall_clock.glb<>res://scenes/WallClock.gd
 water.tscn::PackedScene::3957553595408506515::1717446621::0::1::::<><>::res://shaders/water2/Water.gdshader<>uid://rfdh2ifq6tgw::::res://shaders/water2/water_normal1.tres<>uid://c15k0k7r635ol::::res://shaders/water2/water_normal2.tres<>uid://b6q8x2v6b286h::::res://shaders/water2/wave_texture.tres<>uid://buva5pk4rq5ka::::res://shaders/water2/wave_bump_texture.tres<>res://scripts/water.gd
-world.tscn::PackedScene::4966326117932179450::1741798463::0::1::::<><>::uid://bwnclg6c3cvhb::::res://scenes/water.tscn<>res://scripts/smoother.gd<>res://scenes/TimeDirector.gd<>uid://bpy0xqjh0s05n::::res://scenes/wall_clock.tscn<>uid://bmr1vjj86lduw::::res://scenes/ScriptDirector.tscn<>uid://cbbammh28t1dh::::res://scenes/player.tscn<>uid://ydngqtuepp4g::::res://scenes/ship.tscn<>uid://clubwllwj4tkn::::res://sprites/fog_texture_v2.png<>res://shaders/water2/Water.gdshader<>uid://rfdh2ifq6tgw::::res://shaders/water2/water_normal1.tres<>uid://ce5ucjcd4sne6::::res://sounds/Sea Ambient.mp3<>uid://c15k0k7r635ol::::res://shaders/water2/water_normal2.tres<>uid://db27lwtqx2xrf::::res://sprites/kenney/PNG (Transparent)/smoke_04.png<>uid://b6q8x2v6b286h::::res://shaders/water2/wave_texture.tres<>uid://buva5pk4rq5ka::::res://shaders/water2/wave_bump_texture.tres<>uid://cpf1kw0lrcgd0::::res://models/lamp/ShipLamp.glb<>res://scripts/FPSCounter.gd
-::res://scripts/::1741797378
+world.tscn::PackedScene::4966326117932179450::1741971741::0::1::::<><>::uid://bwnclg6c3cvhb::::res://scenes/water.tscn<>res://scripts/smoother.gd<>res://scenes/TimeDirector.gd<>uid://bpy0xqjh0s05n::::res://scenes/wall_clock.tscn<>uid://bmr1vjj86lduw::::res://scenes/ScriptDirector.tscn<>uid://cbbammh28t1dh::::res://scenes/player.tscn<>uid://ydngqtuepp4g::::res://scenes/ship.tscn<>res://shaders/water2/Water.gdshader<>uid://rfdh2ifq6tgw::::res://shaders/water2/water_normal1.tres<>uid://ce5ucjcd4sne6::::res://sounds/Sea Ambient.mp3<>uid://c15k0k7r635ol::::res://shaders/water2/water_normal2.tres<>uid://db27lwtqx2xrf::::res://sprites/kenney/PNG (Transparent)/smoke_04.png<>uid://b6q8x2v6b286h::::res://shaders/water2/wave_texture.tres<>uid://buva5pk4rq5ka::::res://shaders/water2/wave_bump_texture.tres<>uid://cpf1kw0lrcgd0::::res://models/lamp/ShipLamp.glb<>res://scripts/FPSCounter.gd
+::res://scripts/::1741969461
+door_script.gd::GDScript::-1::1741964815::0::1::::<>Node<>::
 FirstArea3D.gd::GDScript::-1::1701622220::0::1::::<>Area3D<>::
 FirstInteraction.gd::GDScript::-1::1701622220::0::1::::<>Node<>::
 FirstSunset.gd::GDScript::-1::1701622220::0::1::::<>Node<>::
 FPSCounter.gd::GDScript::-1::1703177708::0::1::::<>Label<>::
 GameData.gd::GDScript::-1::1701622220::0::1::::<>Node<>::
 Greatings.gd::GDScript::-1::1701555867::0::1::::<>Node<>::
-player.gd::GDScript::-1::1703274818::0::1::::<>CharacterBody3D<>::
+player.gd::GDScript::-1::1741969461::0::1::::<>CharacterBody3D<>::
 ScriptDirector.gd::GDScript::-1::1702253430::0::1::::<>Node<>::
 ship.gd::GDScript::-1::1703274818::0::1::::<>Node3D<>::
 smoother.gd::GDScript::-1::1701555827::0::1::::Smoother<>Node<>::
 water.gd::GDScript::-1::1702253430::0::1::::<>MeshInstance3D<>::
 ::res://scripts/enums/::1741796923
-::res://shaders/::1741798165
+::res://shaders/::1741799318
 ::res://shaders/water/::1741794805
 Water.gdshader::Shader::-1::1702253207::0::1::::<><>::
 WaterPlaneNormal.tres::NoiseTexture2D::456191655904066718::1702061181::0::1::::<><>::
-::res://shaders/water2/::1741798519
-Water.gdshader::Shader::-1::1741798519::0::1::::<><>::
-water_normal1.tres::NoiseTexture2D::1203728312891171398::1741795513::0::1::::<><>::
-water_normal2.tres::NoiseTexture2D::6660335024854331471::1741795513::0::1::::<><>::
-wave_bump_texture.tres::NoiseTexture2D::3833603867745456124::1741795513::0::1::::<><>::
-wave_texture.tres::NoiseTexture2D::4597351066540448817::1741795513::0::1::::<><>::
-::res://shaders/water_mask/::1741798519
-water_mask.gdshader::Shader::-1::1741798519::0::1::::<><>::
+::res://shaders/water2/::1741971987
+Water.gdshader::Shader::-1::1741971987::0::1::::<><>::
+water_normal1.tres::NoiseTexture2D::1203728312891171398::1741962782::0::1::::<><>::
+water_normal2.tres::NoiseTexture2D::6660335024854331471::1741962782::0::1::::<><>::
+wave_bump_texture.tres::NoiseTexture2D::3833603867745456124::1741962782::0::1::::<><>::
+wave_texture.tres::NoiseTexture2D::4597351066540448817::1741962782::0::1::::<><>::
+::res://shaders/water_mask/::1741971987
+water_mask.gdshader::Shader::-1::1741971987::0::1::::<><>::
 water_mask.tres::ShaderMaterial::8295638575783435261::1701622221::0::1::::<><>::res://shaders/water_mask/water_mask.gdshader
-::res://sounds/::1741794806
+::res://sounds/::1741969006
 Flashlight.mp3::AudioStreamMP3::3289049105732044530::1702253430::1702253430::1::::<><>::
 Metal Step Faded.mp3::AudioStreamMP3::1853418647658094763::1703177708::1703177708::1::::<><>::
 Metal Step.mp3::AudioStreamMP3::6111860162764689007::1703177708::1703177708::1::::<><>::
 Sea Ambient.mp3::AudioStreamMP3::5116746461978806811::1703177709::1703177709::1::::<><>::
+::res://sounds/door/::1741971584
+close_wooden_door.mp3::AudioStreamMP3::6152800084437334991::1741969020::1741969020::1::::<><>::
+open_wooden_door.mp3::AudioStreamMP3::1779585211165905728::1741969020::1741969020::1::::<><>::
+open_wooden_door_1.mp3::AudioStreamMP3::2587650311040484229::1741970812::1741970812::1::::<><>::
+open_wooden_door_revert.mp3::AudioStreamMP3::465796515178682779::1741970238::1741970239::1::::<><>::
 ::res://sprites/::1741794806
 fog_texture_v1.png::CompressedTexture2D::7717644004507440536::1702253430::1702253430::1::::<><>::
 fog_texture_v2.png::CompressedTexture2D::5586306802706896677::1702253430::1702253430::1::::<><>::

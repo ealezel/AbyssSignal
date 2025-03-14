@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cc0ywvnxgg6nu"]
+[gd_scene load_steps=33 format=3 uid="uid://cc0ywvnxgg6nu"]
 
 [ext_resource type="PackedScene" uid="uid://bwnclg6c3cvhb" path="res://scenes/water.tscn" id="2_fdepl"]
 [ext_resource type="Script" path="res://scripts/smoother.gd" id="2_g65v7"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bmr1vjj86lduw" path="res://scenes/ScriptDirector.tscn" id="3_v2nn5"]
 [ext_resource type="PackedScene" uid="uid://cbbammh28t1dh" path="res://scenes/player.tscn" id="4_6a0i2"]
 [ext_resource type="PackedScene" uid="uid://ydngqtuepp4g" path="res://scenes/ship.tscn" id="4_ruvqp"]
-[ext_resource type="Texture2D" uid="uid://clubwllwj4tkn" path="res://sprites/fog_texture_v2.png" id="7_cc4kg"]
 [ext_resource type="Shader" path="res://shaders/water2/Water.gdshader" id="9_myd14"]
 [ext_resource type="Texture2D" uid="uid://rfdh2ifq6tgw" path="res://shaders/water2/water_normal1.tres" id="10_an2a4"]
 [ext_resource type="AudioStream" uid="uid://ce5ucjcd4sne6" path="res://sounds/Sea Ambient.mp3" id="10_d85q7"]
@@ -152,54 +151,11 @@ alpha_curve = SubResource("CurveTexture_kac1i")
 
 [sub_resource type="QuadMesh" id="QuadMesh_dk8yg"]
 
-[sub_resource type="Gradient" id="Gradient_xd5fm"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.12549)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_n6rbm"]
-gradient = SubResource("Gradient_xd5fm")
-
-[sub_resource type="Curve" id="Curve_nn7cy"]
-max_value = 4.0
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 4), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_oqqsh"]
-width = 2048
-curve = SubResource("Curve_nn7cy")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5852h"]
-lifetime_randomness = 0.1
-emission_shape = 3
-emission_box_extents = Vector3(1, 1, 1)
-spread = 100.0
-gravity = Vector3(0, 0, 0)
-radial_accel_max = 1.0
-scale_max = 5.0
-scale_curve = SubResource("CurveTexture_oqqsh")
-color_ramp = SubResource("GradientTexture1D_n6rbm")
-anim_offset_max = 1.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o77ej"]
-transparency = 1
-blend_mode = 1
-vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("7_cc4kg")
-disable_receive_shadows = true
-billboard_mode = 3
-particles_anim_h_frames = 8
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
-[sub_resource type="QuadMesh" id="QuadMesh_lkivr"]
-material = SubResource("StandardMaterial3D_o77ej")
-size = Vector2(0.5, 0.5)
-
 [node name="World" type="Node3D"]
 script = SubResource("GDScript_280bb")
 
 [node name="TimeDirector" type="Node" parent="."]
 script = ExtResource("2_jdlyg")
-INGAME_SPEED = 10.0
 
 [node name="ScriptDirector" parent="." instance=ExtResource("3_v2nn5")]
 
@@ -265,14 +221,6 @@ light_volumetric_fog_energy = 0.0
 light_size = 1.0
 spot_range = 1147.55
 spot_angle = 27.4684
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="Enviroment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.37076, 0)
-amount = 256
-speed_scale = 0.1
-visibility_aabb = AABB(-0.0886487, -0.845385, -15.7348, 0.177297, 1.69077, 2.29186)
-process_material = SubResource("ParticleProcessMaterial_5852h")
-draw_pass_1 = SubResource("QuadMesh_lkivr")
 
 [node name="Player" parent="." instance=ExtResource("4_6a0i2")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 15.4029, 0)

@@ -31,7 +31,7 @@ const JUMP_VELOCITY = 5
 const GRAVITY = 9.8
 
 var interactable = false
-var door_name = ""
+var door_object
 
 enum State {
 	WALKING,
@@ -64,14 +64,23 @@ func _input(event):
 		if interact_checker.is_colliding():
 			var target = interact_checker.get_collider()
 			if target.is_in_group("door"):
-				door_name = interact_checker.get_collider().get_name()
+				var targetObject = interact_checker.get_collider()
+				door_object = targetObject
+				door_object.door_name = targetObject.get_name()
+				
+				if (targetObject.is_open == true):
+					hint.set_text("Close door (E)")
+				else:
+					hint.set_text("Open door (E)")
+				
 				hint.set_visible(true)
-				hint.set_text("Open door (E)")
 				interactable = true
 			else:
+				door_object = null
 				hint.set_visible(false)
 				interactable = false
 		else:
+			door_object = null
 			hint.set_visible(false)
 			interactable = false
 
@@ -168,5 +177,13 @@ func _physics_process(delta):
 
 #region Interact
 	if Input.is_action_just_pressed("Interact"):
-		animation_player.play(door_name)
+		if door_object != null:
+			if (door_object.is_open == true):
+				door_object.is_open = false
+				hint.set_visible(false)
+				animation_player.play(door_object.door_name + "_close")
+			else:
+				door_object.is_open = true
+				hint.set_visible(false)
+				animation_player.play(door_object.door_name + "_open")
 #endregion

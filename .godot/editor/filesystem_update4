@@ -1,4 +1,4 @@
-res://default_bus_layout.tres
+res://adaptive-audio-player-main/aaplayout.tres
 res://scenes/world.tscn
 res://shaders/water2/Water.gdshader
 res://shaders/water2/water_normal1.tres
@@ -8,3 +8,4 @@ res://shaders/water2/wave_bump_texture.tres
 res://shaders/water_mask/water_mask.gdshader
 res://scenes/player.tscn
 res://scenes/ship.tscn
+res://scenes/wall_clock.tscn
