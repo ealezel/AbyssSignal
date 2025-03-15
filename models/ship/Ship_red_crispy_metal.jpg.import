@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkj1apty6wmd2"
 path.s3tc="res://.godot/imported/Ship_red_crispy_metal.jpg-540efa48bf4e6b30a02acf7115ad58fe.s3tc.ctex"
-path.etc2="res://.godot/imported/Ship_red_crispy_metal.jpg-540efa48bf4e6b30a02acf7115ad58fe.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -14,7 +13,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://models/ship/Ship_red_crispy_metal.jpg"
-dest_files=["res://.godot/imported/Ship_red_crispy_metal.jpg-540efa48bf4e6b30a02acf7115ad58fe.s3tc.ctex", "res://.godot/imported/Ship_red_crispy_metal.jpg-540efa48bf4e6b30a02acf7115ad58fe.etc2.ctex"]
+dest_files=["res://.godot/imported/Ship_red_crispy_metal.jpg-540efa48bf4e6b30a02acf7115ad58fe.s3tc.ctex"]
 
 [params]
 

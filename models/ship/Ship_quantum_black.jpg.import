@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3p6eg8fnfl4p"
 path.s3tc="res://.godot/imported/Ship_quantum_black.jpg-0f3c372506cc2d9e01070d19d6589735.s3tc.ctex"
-path.etc2="res://.godot/imported/Ship_quantum_black.jpg-0f3c372506cc2d9e01070d19d6589735.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -14,7 +13,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://models/ship/Ship_quantum_black.jpg"
-dest_files=["res://.godot/imported/Ship_quantum_black.jpg-0f3c372506cc2d9e01070d19d6589735.s3tc.ctex", "res://.godot/imported/Ship_quantum_black.jpg-0f3c372506cc2d9e01070d19d6589735.etc2.ctex"]
+dest_files=["res://.godot/imported/Ship_quantum_black.jpg-0f3c372506cc2d9e01070d19d6589735.s3tc.ctex"]
 
 [params]
 

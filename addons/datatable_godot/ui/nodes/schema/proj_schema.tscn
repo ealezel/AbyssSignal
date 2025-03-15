@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://07hkei7jlimi"]
 
-[ext_resource type="Script" path="res://addons/datatable_godot/ui/schema/new_table/proj_schema.gd" id="1_unwl8"]
+[ext_resource type="Script" uid="uid://bufqa2i55pofx" path="res://addons/datatable_godot/ui/schema/new_table/proj_schema.gd" id="1_unwl8"]
 
 [node name="proj_schema" type="HBoxContainer"]
 script = ExtResource("1_unwl8")

@@ -2,6 +2,7 @@ extends Node3D
 
 signal openDoor
 
+@onready var ship_animations: AnimationPlayer = $"Ship Model/Ship/Ship Animations"
 @onready var water = get_node("%Water")
 
 func _on_water_hider_body_entered(body):

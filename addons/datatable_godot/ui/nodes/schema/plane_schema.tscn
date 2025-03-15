@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dl8gaa43nw4av"]
 
-[ext_resource type="Script" path="res://addons/datatable_godot/ui/schema/new_table/plane_schema.gd" id="1_j3mir"]
+[ext_resource type="Script" uid="uid://dru4ltlbwmjv5" path="res://addons/datatable_godot/ui/schema/new_table/plane_schema.gd" id="1_j3mir"]
 
 [node name="plane_schema" type="HBoxContainer"]
 visible = false

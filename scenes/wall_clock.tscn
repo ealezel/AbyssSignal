@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bpy0xqjh0s05n"]
 
 [ext_resource type="PackedScene" uid="uid://btrrv5m8cywwv" path="res://models/clock/wall_clock.glb" id="1_s7wtw"]
-[ext_resource type="Script" path="res://scenes/WallClock.gd" id="2_n1ct0"]
+[ext_resource type="Script" uid="uid://cd88dy5gwm0om" path="res://scenes/WallClock.gd" id="2_n1ct0"]
 
 [node name="WallClock" instance=ExtResource("1_s7wtw")]
 script = ExtResource("2_n1ct0")

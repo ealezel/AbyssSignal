@@ -1,29 +1,39 @@
-[gd_scene load_steps=33 format=3 uid="uid://cc0ywvnxgg6nu"]
+[gd_scene load_steps=34 format=3 uid="uid://cc0ywvnxgg6nu"]
 
 [ext_resource type="PackedScene" uid="uid://bwnclg6c3cvhb" path="res://scenes/water.tscn" id="2_fdepl"]
-[ext_resource type="Script" path="res://scripts/smoother.gd" id="2_g65v7"]
-[ext_resource type="Script" path="res://scenes/TimeDirector.gd" id="2_jdlyg"]
+[ext_resource type="Script" uid="uid://cjxbjgp1tab04" path="res://scripts/smoother.gd" id="2_g65v7"]
+[ext_resource type="Script" uid="uid://dpowhuvrjrcsc" path="res://scenes/TimeDirector.gd" id="2_jdlyg"]
 [ext_resource type="PackedScene" uid="uid://bpy0xqjh0s05n" path="res://scenes/wall_clock.tscn" id="3_00u7n"]
 [ext_resource type="PackedScene" uid="uid://bmr1vjj86lduw" path="res://scenes/ScriptDirector.tscn" id="3_v2nn5"]
 [ext_resource type="PackedScene" uid="uid://cbbammh28t1dh" path="res://scenes/player.tscn" id="4_6a0i2"]
 [ext_resource type="PackedScene" uid="uid://ydngqtuepp4g" path="res://scenes/ship.tscn" id="4_ruvqp"]
-[ext_resource type="Shader" path="res://shaders/water2/Water.gdshader" id="9_myd14"]
+[ext_resource type="Shader" uid="uid://77w3f321cgtk" path="res://shaders/water2/Water.gdshader" id="9_myd14"]
 [ext_resource type="Texture2D" uid="uid://rfdh2ifq6tgw" path="res://shaders/water2/water_normal1.tres" id="10_an2a4"]
 [ext_resource type="AudioStream" uid="uid://ce5ucjcd4sne6" path="res://sounds/Sea Ambient.mp3" id="10_d85q7"]
 [ext_resource type="Texture2D" uid="uid://c15k0k7r635ol" path="res://shaders/water2/water_normal2.tres" id="11_g8prj"]
 [ext_resource type="Texture2D" uid="uid://db27lwtqx2xrf" path="res://sprites/kenney/PNG (Transparent)/smoke_04.png" id="12_2xql5"]
+[ext_resource type="AudioStream" uid="uid://ctwpyosf0asgl" path="res://sounds/door/close_wooden_door.mp3" id="12_7t5mc"]
 [ext_resource type="Texture2D" uid="uid://b6q8x2v6b286h" path="res://shaders/water2/wave_texture.tres" id="12_k7t8m"]
 [ext_resource type="Texture2D" uid="uid://buva5pk4rq5ka" path="res://shaders/water2/wave_bump_texture.tres" id="13_u4ooj"]
 [ext_resource type="PackedScene" uid="uid://cpf1kw0lrcgd0" path="res://models/lamp/ShipLamp.glb" id="14_03r0g"]
-[ext_resource type="Script" path="res://scripts/FPSCounter.gd" id="17_e1yjo"]
+[ext_resource type="Script" uid="uid://mlhufs0n3wmu" path="res://scripts/FPSCounter.gd" id="17_e1yjo"]
 
 [sub_resource type="GDScript" id="GDScript_280bb"]
 script/source = "extends Node
+
+@onready var ship: Node3D = $Enviroment/Ship
+@onready var steam_audio_player: SteamAudioPlayer = $Enviroment/Ship/SteamAudioPlayer
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
+	
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed(\"ui_accept\"):
+		#ship.ship_animations.play(\"WC Door_open\")
+		steam_audio_player.play()
+	pass
 "
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_300y7"]
@@ -66,6 +76,10 @@ shader_parameter/albedo = Color(0, 0.262745, 0.47451, 1)
 shader_parameter/albedo2 = Color(0, 0.176471, 0.305882, 1)
 shader_parameter/metallic = 0.0
 shader_parameter/roughness = 0.02
+shader_parameter/wave = ExtResource("12_k7t8m")
+shader_parameter/wave_bump = ExtResource("13_u4ooj")
+shader_parameter/texture_normal = ExtResource("10_an2a4")
+shader_parameter/texture_normal2 = ExtResource("11_g8prj")
 shader_parameter/wave_direction = Vector2(0, -0.3)
 shader_parameter/wave_direction2 = Vector2(0, -0.5)
 shader_parameter/time_scale = 0.08
@@ -79,10 +93,6 @@ shader_parameter/edge_scale = 0.3
 shader_parameter/near = 1.0
 shader_parameter/far = 1000.0
 shader_parameter/edge_color = Color(0, 0, 0, 1)
-shader_parameter/wave = ExtResource("12_k7t8m")
-shader_parameter/wave_bump = ExtResource("13_u4ooj")
-shader_parameter/texture_normal = ExtResource("10_an2a4")
-shader_parameter/texture_normal2 = ExtResource("11_g8prj")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_082ci"]
 render_priority = -2
@@ -97,7 +107,7 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 use_point_size = true
 point_size = 87.5
-proximity_fade_distance = 0.0
+proximity_fade_distance = 0.01
 distance_fade_mode = 1
 distance_fade_min_distance = 173.07
 distance_fade_max_distance = 0.0
@@ -110,8 +120,7 @@ point_count = 3
 curve = SubResource("Curve_27nr0")
 
 [sub_resource type="Curve" id="Curve_ubd6h"]
-min_value = -10.0
-max_value = 5.0
+_limits = [-10.0, 5.0, 0.0, 1.0]
 _data = [Vector2(0, 0.384615), 0.0, 0.0, 0, 0, Vector2(1, -4.56044), 0.0, 0.0, 0, 0]
 point_count = 2
 
@@ -124,8 +133,7 @@ curve_y = SubResource("Curve_ubd6h")
 curve_z = SubResource("Curve_qebt7")
 
 [sub_resource type="Curve" id="Curve_l2olm"]
-min_value = -200.0
-max_value = 200.0
+_limits = [-200.0, 200.0, 0.0, 1.0]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
@@ -165,6 +173,8 @@ script = ExtResource("2_g65v7")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5xh5d")
 
+[node name="SteamAudioConfig" type="SteamAudioConfig" parent="."]
+
 [node name="Enviroment" type="Node3D" parent="."]
 
 [node name="Water" parent="Enviroment" instance=ExtResource("2_fdepl")]
@@ -183,6 +193,15 @@ autoplay = true
 
 [node name="Ship" parent="Enviroment" instance=ExtResource("4_ruvqp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="SteamAudioPlayer" type="SteamAudioPlayer" parent="Enviroment/Ship"]
+reflection = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.13411, 14.0692, -0.0940475)
+stream = ExtResource("12_7t5mc")
+attenuation_model = 1
+volume_db = -1.0
+unit_size = 15.0
+panning_strength = 0.0
 
 [node name="WallClock" parent="Enviroment/Ship" instance=ExtResource("3_00u7n")]
 transform = Transform3D(-0.833333, 0, -7.28523e-08, 0, 0.833333, 0, 7.28523e-08, 0, -0.833333, 4.35732, 17.9677, -1.06811)

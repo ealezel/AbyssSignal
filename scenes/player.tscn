@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cbbammh28t1dh"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_0smrv"]
+[ext_resource type="Script" uid="uid://c3mhl26a6llru" path="res://scripts/player.gd" id="1_0smrv"]
 [ext_resource type="Texture2D" uid="uid://d0me6w6ag2qki" path="res://sprites/kenney/PNG (Transparent)/circle_05.png" id="2_0tiug"]
 [ext_resource type="AudioStream" uid="uid://1n2sfxwsppn4" path="res://sounds/Metal Step Faded.mp3" id="2_5avlf"]
 [ext_resource type="AudioStream" uid="uid://bm4ifm6js12qw" path="res://sounds/Flashlight.mp3" id="2_b6ed2"]
@@ -83,6 +83,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0859352, 0)
 current = true
 near = 0.001
 far = 1000.0
+
+[node name="SteamAudioListener" type="SteamAudioListener" parent="Head/Eyes/Camera3D"]
 
 [node name="Interact Checker" type="RayCast3D" parent="Head/Eyes"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)

@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://deaes4rlr8e48"
 path.s3tc="res://.godot/imported/Ship_dirty_metal_strips_br_63_cntr_68.webp-eb18f7fd610b01682fe9f25e7166b6a8.s3tc.ctex"
-path.etc2="res://.godot/imported/Ship_dirty_metal_strips_br_63_cntr_68.webp-eb18f7fd610b01682fe9f25e7166b6a8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -14,7 +13,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://models/ship/Ship_dirty_metal_strips_br_63_cntr_68.webp"
-dest_files=["res://.godot/imported/Ship_dirty_metal_strips_br_63_cntr_68.webp-eb18f7fd610b01682fe9f25e7166b6a8.s3tc.ctex", "res://.godot/imported/Ship_dirty_metal_strips_br_63_cntr_68.webp-eb18f7fd610b01682fe9f25e7166b6a8.etc2.ctex"]
+dest_files=["res://.godot/imported/Ship_dirty_metal_strips_br_63_cntr_68.webp-eb18f7fd610b01682fe9f25e7166b6a8.s3tc.ctex"]
 
 [params]
 

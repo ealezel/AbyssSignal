@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cxv2241ipje06"]
 
-[ext_resource type="Script" path="res://addons/datatable_godot/ui/schema/new_table/quaternionSchema.gd" id="1_vbljs"]
+[ext_resource type="Script" uid="uid://crac2tddtsgfn" path="res://addons/datatable_godot/ui/schema/new_table/quaternionSchema.gd" id="1_vbljs"]
 
 [node name="quat_schema" type="HBoxContainer"]
 visible = false

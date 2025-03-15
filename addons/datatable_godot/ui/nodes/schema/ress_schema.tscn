@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b6xlum6l21b2x"]
 
-[ext_resource type="Script" path="res://addons/datatable_godot/ui/schema/new_table/ress_schema.gd" id="1_4nhhx"]
-[ext_resource type="Script" path="res://addons/datatable_godot/ui/buttons/newTable/b_resource_import.gd" id="2_wose6"]
+[ext_resource type="Script" uid="uid://dd124wo2jqckn" path="res://addons/datatable_godot/ui/schema/new_table/ress_schema.gd" id="1_4nhhx"]
+[ext_resource type="Script" uid="uid://brac0cu6r5m4l" path="res://addons/datatable_godot/ui/buttons/newTable/b_resource_import.gd" id="2_wose6"]
 
 [node name="ress_schema" type="HBoxContainer"]
 visible = false

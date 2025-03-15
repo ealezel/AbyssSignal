@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=3 uid="uid://bwnclg6c3cvhb"]
 
-[ext_resource type="Shader" path="res://shaders/water2/Water.gdshader" id="1_24ij8"]
+[ext_resource type="Shader" uid="uid://77w3f321cgtk" path="res://shaders/water2/Water.gdshader" id="1_24ij8"]
 [ext_resource type="Texture2D" uid="uid://rfdh2ifq6tgw" path="res://shaders/water2/water_normal1.tres" id="2_4ctmx"]
 [ext_resource type="Texture2D" uid="uid://c15k0k7r635ol" path="res://shaders/water2/water_normal2.tres" id="3_lab7o"]
 [ext_resource type="Texture2D" uid="uid://b6q8x2v6b286h" path="res://shaders/water2/wave_texture.tres" id="3_p5smv"]
 [ext_resource type="Texture2D" uid="uid://buva5pk4rq5ka" path="res://shaders/water2/wave_bump_texture.tres" id="4_a1wie"]
-[ext_resource type="Script" path="res://scripts/water.gd" id="6_g7yy8"]
+[ext_resource type="Script" uid="uid://2dadbedskl4h" path="res://scripts/water.gd" id="6_g7yy8"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_3iwqi"]
 resource_local_to_scene = true
@@ -22,6 +22,10 @@ shader_parameter/albedo = Color(0, 0.32, 0.43, 1)
 shader_parameter/albedo2 = Color(0, 0.47, 0.76, 1)
 shader_parameter/metallic = 0.0
 shader_parameter/roughness = 0.02
+shader_parameter/wave = ExtResource("3_p5smv")
+shader_parameter/wave_bump = ExtResource("4_a1wie")
+shader_parameter/texture_normal = ExtResource("2_4ctmx")
+shader_parameter/texture_normal2 = ExtResource("3_lab7o")
 shader_parameter/wave_direction = Vector2(0.5, -0.2)
 shader_parameter/wave_direction2 = Vector2(-0.5, 0.5)
 shader_parameter/time_scale = 0.1
@@ -35,10 +39,6 @@ shader_parameter/edge_scale = 0.3
 shader_parameter/near = 1.0
 shader_parameter/far = 1900.0
 shader_parameter/edge_color = Color(0, 0, 0, 1)
-shader_parameter/wave = ExtResource("3_p5smv")
-shader_parameter/wave_bump = ExtResource("4_a1wie")
-shader_parameter/texture_normal = ExtResource("2_4ctmx")
-shader_parameter/texture_normal2 = ExtResource("3_lab7o")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vmthx"]
 

@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5rr2sonn14e7"
 path.s3tc="res://.godot/imported/Ship_gray_dotted_br_90.png-f941ffa9fddf49d9c2c5d25bdd11426c.s3tc.ctex"
-path.etc2="res://.godot/imported/Ship_gray_dotted_br_90.png-f941ffa9fddf49d9c2c5d25bdd11426c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -14,7 +13,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://models/ship/Ship_gray_dotted_br_90.png"
-dest_files=["res://.godot/imported/Ship_gray_dotted_br_90.png-f941ffa9fddf49d9c2c5d25bdd11426c.s3tc.ctex", "res://.godot/imported/Ship_gray_dotted_br_90.png-f941ffa9fddf49d9c2c5d25bdd11426c.etc2.ctex"]
+dest_files=["res://.godot/imported/Ship_gray_dotted_br_90.png-f941ffa9fddf49d9c2c5d25bdd11426c.s3tc.ctex"]
 
 [params]
 

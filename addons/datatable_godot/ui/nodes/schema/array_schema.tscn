@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://6kgq5h8y7gcu"]
 
-[ext_resource type="Script" path="res://addons/datatable_godot/ui/schema/new_table/array_schema.gd" id="1_hlcei"]
+[ext_resource type="Script" uid="uid://b1q1hq2xghfr2" path="res://addons/datatable_godot/ui/schema/new_table/array_schema.gd" id="1_hlcei"]
 [ext_resource type="Texture2D" uid="uid://d4af0scr4f3ea" path="res://addons/datatable_godot/icons/Add.svg" id="2_43556"]
-[ext_resource type="Script" path="res://addons/datatable_godot/ui/box/arr_item_box.gd" id="3_gepj5"]
+[ext_resource type="Script" uid="uid://ctvoec52qktbk" path="res://addons/datatable_godot/ui/box/arr_item_box.gd" id="3_gepj5"]
 [ext_resource type="Texture2D" uid="uid://blh822uvyrgg1" path="res://addons/datatable_godot/icons/Remove.svg" id="4_gqklv"]
 
 [node name="array_schema" type="VBoxContainer"]

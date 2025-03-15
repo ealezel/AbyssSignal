@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://coygjo4cwrm7p"]
 
-[ext_resource type="Script" path="res://addons/datatable_godot/ui/schema/new_table/rect_schema.gd" id="1_bjn0f"]
+[ext_resource type="Script" uid="uid://dd0evi0xkol48" path="res://addons/datatable_godot/ui/schema/new_table/rect_schema.gd" id="1_bjn0f"]
 
 [node name="rect_schema" type="HBoxContainer"]
 visible = false

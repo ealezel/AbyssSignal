@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dh7qp7neu1hqm"
 path.s3tc="res://.godot/imported/fog_texture_v1.png-d2ebc15feddf193a138d11cefbde95b6.s3tc.ctex"
-path.etc2="res://.godot/imported/fog_texture_v1.png-d2ebc15feddf193a138d11cefbde95b6.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://sprites/fog_texture_v1.png"
-dest_files=["res://.godot/imported/fog_texture_v1.png-d2ebc15feddf193a138d11cefbde95b6.s3tc.ctex", "res://.godot/imported/fog_texture_v1.png-d2ebc15feddf193a138d11cefbde95b6.etc2.ctex"]
+dest_files=["res://.godot/imported/fog_texture_v1.png-d2ebc15feddf193a138d11cefbde95b6.s3tc.ctex"]
 
 [params]
 
